@@ -44,7 +44,7 @@ $(document).ready(function(){
         target.append(`<p>${inputItem.inputDesc}</p>`);
         target.append(`<input type="text" id=${inputItem.inputId}>`);
         target.append(`<input type="submit" id=${inputItem.inputSubmit}></input>`);
-        target.append(`<p><span id=${inputItem.inputResult}></span></p>`);
+        target.append(`<p id=${inputItem.inputResult}></p>`);
     })
 
     //each input will manipulate its own array of numbers
@@ -95,7 +95,7 @@ $(document).ready(function(){
         const arrayMap = data3.some(element => element > num);
         //display result as 'yes' or 'no'
         const someResult = arrayMap ? 'Yes' : 'No';
-        resultSum3.text(`Are some of the numbers in the array greater than your number?: ${someResult}`);
+        resultSum3.text(`Are some of the numbers in the array greater than my number?: ${someResult}`);
         input3.val('');
      })
 
