@@ -1,5 +1,5 @@
-//Create object containing ids, descriptions, and labels to build the
-//set of input in HTML
+//Create array of objects containing ids, descriptions, and labels to build the
+//inputs in HTML
 const inputSet = [
     {
         inputId : 'input-reduce',
@@ -47,6 +47,7 @@ $(document).ready(function(){
         target.append(`<p><span id=${inputItem.inputResult}></span></p>`);
     })
 
+    //each input will manipulate its own array of numbers
     const data1 = [1, 2, 3, 4],
     input1 = $('#input-reduce'),
     resultSum1 = $('#result-reduce');
@@ -66,36 +67,49 @@ $(document).ready(function(){
      $('#submit-reduce').click(function(){
         const val = input1.val();
         const num = parseInt(val);
+        //include input value in the starting array
+        //this array will grow in length with every input
         data1.push(num);
+        //calculate sum of all array elements
         const sum = data1.reduce((acc, curr) => acc + curr);
         resultSum1.text(`My total with reduce is now: ${sum}`);
         input1.val('');
      });
 
      $('#submit-map').click(function(){
+        //this map function will increase each element based on input value
         const val = input2.val();
         const num = parseInt(val);
+        //map array and replace starting array
         data2 = data2.map(element => element + num);
         resultSum2.text(`My array with map is now: ${data2}`);
         input2.val('');
      })
 
      $('#submit-some').click(function(){
+        //this function will determine if some of the numbers
+        //in the array are greater than the input value and
+        //return a true or false answer
         const val = input3.val();
         const num = parseInt(val);
         const arrayMap = data3.some(element => element > num);
-        resultSum3.text(`Are some of the numbers in the array greater than your number?: ${arrayMap}`);
+        //display result as 'yes' or 'no'
+        const someResult = arrayMap ? 'Yes' : 'No';
+        resultSum3.text(`Are some of the numbers in the array greater than your number?: ${someResult}`);
         input3.val('');
      })
 
      $('#submit-find').click(function(){
+        //this function will search for an exact match in the array to
+        //the input value
         const val = input4.val();
         const num = parseInt(val);
-        const anum = data4.find(element => element === num);
-        if (anum === num){
-            resultSum4.text(`Your number ${anum} exists in the array`);   
+        const numResult = data4.find(element => element === num);
+        //different print statements for different results
+        if (numResult === num){
+            resultSum4.text(`Yay! ${num} exists in the array`);   
         } else {
-            resultSum4.text(`${num} does not exist in the array`)
+            resultSum4.text(`Sorry, ${num} does not exist in the array`)
         }      
         input4.val('');
      })
