@@ -15,3 +15,29 @@ html {
 h1 {
     color: $red;  
 }
+
+.card-body {
+    // width: 951;
+    // height: 474;
+    width: 65%;
+    background-color: $gray;
+    border: solid $dark-gray;
+    
+}
+
+.card-content {
+    // padding: 2.5rem;
+    background-color: $white;
+    margin: 2.5rem;
+    border: dashed red;
+    display: flex;
+    &_headshot-container {
+        border: dashed blue;
+        img {
+            width: 225px;
+        }
+    }
+    &_detail-container {
+        border: dashed purple;
+    }
+}
