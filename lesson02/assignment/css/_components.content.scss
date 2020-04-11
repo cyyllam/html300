@@ -16,28 +16,78 @@ h1 {
     color: $red;  
 }
 
+p {
+    color: $font-gray;
+}
+
 .card-body {
-    // width: 951;
-    // height: 474;
     width: 65%;
     background-color: $gray;
-    border: solid $dark-gray;
-    
+    border: 1px solid $dark-gray;
+    border-radius: 5px;
 }
 
 .card-content {
-    // padding: 2.5rem;
     background-color: $white;
     margin: 2.5rem;
-    border: dashed red;
+    padding: 1.8rem;
+    // border: dashed red;
     display: flex;
     &_headshot-container {
-        border: dashed blue;
+        text-align: center;
+        width: 40%;
+        // border: dashed blue;
         img {
-            width: 225px;
+            width: 75%;
+            border-radius: 50%;
+            // border: dashed pink;
+        }
+        p {
+            &:first-of-type {
+                margin-top: 1rem;
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
+            &:last-of-type {
+                font-style: italic;
+                font-size: 1rem;
+            }
+            margin: 0;
         }
     }
     &_detail-container {
-        border: dashed purple;
+        margin-left: 1rem;
+        padding: 2rem;
+        width: 60%;
+        background-color: $medium-gray;
+        // border: dashed purple;
     }
 }
+
+.attribute-container {
+    // border: dashed green;
+    &_inline {
+        display: flex;
+        // border: dashed pink;
+        p {
+            margin: 0 0 1.1rem 0;
+            &:first-of-type {
+                &::after {
+                    content: ":";
+                }
+                font-size: 1rem;
+                font-weight: bold;
+                margin-right: 3px;
+            }
+
+        }
+    }
+}
+
+.linkedin-container {
+    display: flex;
+    img {
+        margin-right: 10px;
+    }
+}
+
