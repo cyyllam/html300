@@ -23,6 +23,7 @@ h1 {
 
 p {
     color: $font-gray;
+    font-family: $font;
 }
 
 .card-body {
@@ -79,7 +80,7 @@ p {
                 &::after {
                     content: ":";
                 }
-                font-size: calculateRem(18px); 
+                font-size: calculateRem(20px); 
                 font-weight: bold;
                 margin-right: 3px;
             }
