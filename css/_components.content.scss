@@ -1,3 +1,8 @@
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+    }
+
 html {
     box-sizing: border-box;
 }
@@ -21,7 +26,7 @@ p {
 }
 
 .card-body {
-    width: 65%;
+    width: $card-width; //approx 65%
     background-color: $gray;
     border: 1px solid $dark-gray;
     border-radius: 5px;
@@ -31,63 +36,79 @@ p {
     background-color: $white;
     margin: 2.5rem;
     padding: 1.8rem;
-    // border: dashed red;
     display: flex;
     &_headshot-container {
+        // wrapper containing the headshot, name and title
         text-align: center;
         width: 40%;
-        // border: dashed blue;
         img {
             width: 75%;
             border-radius: 50%;
-            // border: dashed pink;
         }
         p {
             &:first-of-type {
+                //name
                 margin-top: 1rem;
-                font-size: 1.5rem;
+                font-size: calculateRem(26px);
                 font-weight: bold;
             }
             &:last-of-type {
+                //title
                 font-style: italic;
-                font-size: 1rem;
+                font-size: calculateRem(20px); 
             }
             margin: 0;
         }
     }
     &_detail-container {
-        margin-left: 1rem;
+        // wrapper containing personal information and Linked-in detail
+        margin: 0 0 0 1rem;
         padding: 2rem;
         width: 60%;
         background-color: $medium-gray;
-        // border: dashed purple;
     }
 }
 
 .attribute-container {
-    // border: dashed green;
+    // section that lists personal information
     &_inline {
         display: flex;
-        // border: dashed pink;
         p {
             margin: 0 0 1.1rem 0;
             &:first-of-type {
                 &::after {
                     content: ":";
                 }
-                font-size: 1rem;
+                font-size: calculateRem(18px); 
                 font-weight: bold;
                 margin-right: 3px;
             }
-
         }
     }
 }
 
 .linkedin-container {
+    // line displaying Linked-in logo and info
     display: flex;
     img {
         margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    //media query for mobile or smaller
+    .card-body {
+        width: 100%
+    }
+    .card-content {
+        flex-direction: column;
+        &_headshot-container {
+            width: 100%;
+        }
+        &_detail-container {
+            width: 100%;
+            margin: 1rem 0 0 0;
+        }
     }
 }
 
