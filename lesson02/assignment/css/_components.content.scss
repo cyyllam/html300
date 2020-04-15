@@ -3,6 +3,11 @@
     @return $remSize * 1rem;
     }
 
+@mixin margins-padding($mt, $mr, $mb, $ml, $padding) {
+    margin: $mt $mr $mb $ml;
+    padding: $padding;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -31,12 +36,15 @@ p {
     background-color: $gray;
     border: 1px solid $dark-gray;
     border-radius: 5px;
+    @include media-query("mobile") {
+        // call media query mixin
+        width: 100%;
+    }
 }
 
 .card-content {
     background-color: $white;
-    margin: 2.5rem;
-    padding: 1.8rem;
+    @include margins-padding(2.5rem, 2.5rem, 2.5rem, 2.5rem, 1.8rem);
     display: flex;
     &_headshot-container {
         // wrapper containing the headshot, name and title
@@ -63,10 +71,20 @@ p {
     }
     &_detail-container {
         // wrapper containing personal information and Linked-in detail
-        margin: 0 0 0 1rem;
-        padding: 2rem;
+        @include margins-padding(0, 0, 0, 1rem, 2rem);
         width: 60%;
         background-color: $medium-gray;
+    }
+    @include media-query("mobile") {
+        // call media query mixin
+        flex-direction: column;
+        &_headshot-container {
+            width: 100%;
+        }
+        &_detail-container {
+            width: 100%;
+            margin: 1rem 0 0 0;
+        }
     }
 }
 
@@ -98,21 +116,3 @@ p {
         font-size: calculateRem(20px); 
     }
 }
-
-@media screen and (max-width: 767px) {
-    //media query for mobile or smaller
-    .card-body {
-        width: 100%
-    }
-    .card-content {
-        flex-direction: column;
-        &_headshot-container {
-            width: 100%;
-        }
-        &_detail-container {
-            width: 100%;
-            margin: 1rem 0 0 0;
-        }
-    }
-}
-
