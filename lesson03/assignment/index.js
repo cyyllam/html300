@@ -53,10 +53,9 @@ let objPeople = [
                     }
             ]
 
-objPeople.forEach(element => console.log(element));
-
 $(document).ready(function(){
     objPeople.forEach(function(el){
+        // define template using calling properties from array of objects
        let chunk = `<div class="card-body">
         <div class="card-content">
             <section class="card-content_headshot-container">
@@ -85,7 +84,7 @@ $(document).ready(function(){
                     <div class="attribute-container_inline">
                         <p>Email</p>
                         <p>${el.email}</p>
-                    </div>                                    
+                    </div>                                  
                 </article>
                 <article class="linkedin-container">
                     <img src="img/linkedin.svg" alt="linked-in logo">
@@ -95,6 +94,7 @@ $(document).ready(function(){
         </div>
     </div>`;       
 
+    //append HTML template to index.html
     $('.template-hook').append(chunk);
 
     }); 
