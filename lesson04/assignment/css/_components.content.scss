@@ -1,0 +1,117 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
+
+p {
+    font-family: $font-family;
+}
+
+i {
+    color: $icon;
+    transition: $transition-speed;
+}
+
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    margin-left: 7rem;
+    padding: 1rem;
+}
+
+.navbar {
+    width: 7rem;
+    height: 100vh;
+    position: fixed;
+    background-color: $bg-primary;
+    transition: width 200ms ease;
+
+    &-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    &:hover {
+        width: 16rem;
+
+        i {
+            min-width: 2rem;
+            margin: 0 1.5rem;
+        }
+
+        .link-text {
+            display: block;
+        }
+
+        .logo i {
+            transform: rotate(-180deg);
+        }
+    }
+}
+
+.nav-item {
+    width: 100%;
+
+    &:last-child {
+            margin-top: auto;
+        }
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: $text-primary;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: $transition-speed;
+
+    &:hover {
+        filter: grayscale(0%) opacity(1);
+        background: $bg-secondary;
+        color: $text-secondary;
+    }
+
+    i {
+        min-width: 2rem;
+        margin: auto;
+        
+    }
+} 
+
+.link-text {
+    display: none; 
+    margin-left: 1rem;
+}
+
+.logo {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: $text-secondary;
+    background: $bg-secondary;
+    font-size: 1rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+
+    i {
+        transform: rotate(0deg);
+        transition: transform $transition-speed;
+    }
+}
