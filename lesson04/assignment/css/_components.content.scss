@@ -1,3 +1,11 @@
+// Inspired by: Fireship's Animated Navbar with CSS
+// https://www.youtube.com/watch?v=biOMz4puGt8
+
+@mixin colorAndBackground($color, $backgroundColor) {
+    color: $color;
+    background: $backgroundColor; 
+}
+
 html {
     box-sizing: border-box;
 }
@@ -18,15 +26,14 @@ i {
 }
 
 body {
-    color: black;
-    background-color: white;
+    @include colorAndBackground(black, white);
     margin: 0;
     padding: 0;
 }
 
 main {
     margin-left: 7rem;
-    padding: 1rem;
+    padding: 1rem 3rem;
 }
 
 .navbar {
@@ -47,7 +54,9 @@ main {
     }
 
     &:hover {
-        width: 16rem;
+        // when hovering over navbar, navbar will expand, icon will shift with text alongside it,
+        // and logo icon wil rotate 180 degrees to the left
+        width: 18rem;
 
         i {
             min-width: 2rem;
@@ -67,6 +76,7 @@ main {
 .nav-item {
     width: 100%;
 
+    // place last icon on the far bottom
     &:last-child {
             margin-top: auto;
         }
@@ -75,16 +85,16 @@ main {
 .nav-link {
     display: flex;
     align-items: center;
-    height: 5rem;
+    height: 4.5rem;
     color: $text-primary;
     text-decoration: none;
     filter: grayscale(100%) opacity(0.7);
     transition: $transition-speed;
 
     &:hover {
+        // when hovering over link, change color
         filter: grayscale(0%) opacity(1);
-        background: $bg-secondary;
-        color: $text-secondary;
+        @include colorAndBackground($text-secondary, $bg-secondary);
     }
 
     i {
@@ -97,19 +107,26 @@ main {
 .link-text {
     display: none; 
     margin-left: 1rem;
+    font-family: $title-font-family;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-family: $title-font-family;
+    font-weight: bold;
 }
 
 .logo {
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+    // margin-bottom: 1rem;
     text-align: center;
-    color: $text-secondary;
-    background: $bg-secondary;
+    @include colorAndBackground($text-secondary, $bg-secondary);
     font-size: 1rem;
-    letter-spacing: 0.3ch;
     width: 100%;
 
+    a {
+        display: flex;
+        justify-content: center;
+    }
     i {
         transform: rotate(0deg);
         transition: transform $transition-speed;
