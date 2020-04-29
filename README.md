@@ -1,26 +1,21 @@
-# Assignment 02 - Sass/Gulp/npm
+# Assignment 03 - Constructors and Data
 
-### Required setup
+### Required setup if not already installed (it should be)
 - Install [node](https://nodejs.org/en/)
-- Install [Adobe XD](https://www.adobe.com/products/xd.html) (free)
 
 ### To get started:
--	In your forked repo, create a new branch called 'lesson-02'
--   Navigate to the root folder of this assignment within terminal `lesson02/assignment/`
+-	In your forked repo, create a new branch called `lesson-03` or something like that
+-   Navigate to the root folder of this assignment within terminal in your fork, `lesson03/assignment`
 -   Run `npm install`
 -   Run `gulp`
--   If gulp is giving issues, you may need to run `npm install -g gulp@3.9.1` 
--	If you have permissions issues running gulp, checkout this [link](https://stackoverflow.com/questions/50258901/cannot-find-module-gulp-sass)
 -   Start working with the files, browsersync will watch your scss/HTML files and reload on changes
-- Find the XD/JPG of the mockup component in the `ref` folder.
-- Build the component using scss, and follow the requirements found in canvas.
-- Make sure to have the image/title stack on top of the rest of the card info on mobile
+- 	Use the contents of `data/data.json` for your data -- remember: you can copy the array into your JS file and set it to a variable to work with
+- 	Migrate your previous SCSS/HTML from assignment 02 for your component (you can copy the corresponding files from your previous assignment to this one so you'll have the HTML/SCSS of the card set up)
+- 	In your JS, convert the component to a template with ES6 string templating and loop through the JSON data, creating components for each object in the data
+- 	Output the templated data onto the `.template-hook` section of the index.html page
+- 	*BONUS*: Add to your component another section for the `codeLanguages` key in the data. Loop through the `codeLanguages` array and add the contents to your new section in the component 
 
-### To submit
-- Create a Pull Request for your `lesson-02` branch with your forked master as the base
-- Add `brycebenson` and `ClovisI` as reviewers
-- DO NOT merge the pull request, just leave it open
-- Paste the link to your pull request in your assignment submission box
-
-
-#### Image source: https://unsplash.com/photos/OhKElOkQ3RE
+### To Submit:
+- Create a pull request for your assignment branch back to your forked master branch
+- Add Patrick & I as reviewers
+- Submit the pull request link in the assignment submission in Canvas
