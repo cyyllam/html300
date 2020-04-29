@@ -1,3 +1,13 @@
+@function calculateRem($size) {
+    $remSize: $size / 16px;
+    @return $remSize * 1rem;
+    }
+
+@mixin margins-padding($mt, $mr, $mb, $ml, $padding) {
+    margin: $mt $mr $mb $ml;
+    padding: $padding;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -14,4 +24,95 @@ html {
 
 h1 {
     color: $red;  
+}
+p {
+    color: $font-gray;
+    font-family: $font;
+}
+
+.card-body {
+    width: $card-width; //approx 65%
+    background-color: $gray;
+    border: 1px solid $dark-gray;
+    border-radius: 5px;
+    margin: 1rem auto;
+    @include media-query("mobile") {
+        // call media query mixin
+        width: 100%;
+    }
+}
+
+.card-content {
+    background-color: $white;
+    @include margins-padding(2.5rem, 2.5rem, 2.5rem, 2.5rem, 1.8rem);
+    display: flex;
+    &_headshot-container {
+        // wrapper containing the headshot, name and title
+        text-align: center;
+        width: 40%;
+        img {
+            width: 75%;
+            border-radius: 50%;
+        }
+        p {
+            &:first-of-type {
+                //name
+                margin-top: 1rem;
+                font-size: calculateRem(26px);
+                font-weight: bold;
+            }
+            &:last-of-type {
+                //title
+                font-style: italic;
+                font-size: calculateRem(20px); 
+            }
+            margin: 0;
+        }
+    }
+    &_detail-container {
+        // wrapper containing personal information and Linked-in detail
+        @include margins-padding(0, 0, 0, 1rem, 2rem);
+        width: 60%;
+        background-color: $medium-gray;
+    }
+    @include media-query("mobile") {
+        // call media query mixin
+        flex-direction: column;
+        &_headshot-container {
+            width: 100%;
+        }
+        &_detail-container {
+            width: 100%;
+            margin: 1rem 0 0 0;
+        }
+    }
+}
+
+.attribute-container {
+    // section that lists personal information
+    &_inline {
+        display: flex;
+        p {
+            margin: 0 0 1.1rem 0;
+            font-size: calculateRem(20px); 
+            &:first-of-type {
+                font-weight: bold;
+                margin-right: 3px;
+                &::after {
+                    content: ":";
+                }  
+            }
+        }
+    }
+}
+
+.linkedin-container {
+    // line displaying Linked-in logo and info
+    display: flex;
+    img {
+        margin-right: 10px;
+    }
+    p {
+        font-size: calculateRem(20px); 
+    }
 }
