@@ -1,3 +1,10 @@
+@mixin removeLiIndent {
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -10,4 +17,33 @@ html {
 
 .main {
     padding: 2rem;
+    nav {
+        padding: 0 1.5rem;
+        background-color: #00A3AD;
+        border: .5px solid grey;
+        ul {
+           display: flex;
+           justify-content: space-between;
+           align-items: center;
+           height: 100px;
+           list-style: none;
+           font-size: 2rem;
+           @include removeLiIndent();
+            .middle {                
+                display: flex;
+                flex-grow: .3;
+                justify-content: space-between;
+                text-decoration: underline;
+                font-size: 24px;
+            }     
+        }   
+    }
+}
+
+li {
+    @include removeLiIndent();
+    a {
+        color: white;
+        font-weight: bold;
+    }
 }
