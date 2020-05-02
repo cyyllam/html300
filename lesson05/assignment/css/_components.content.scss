@@ -11,6 +11,11 @@
     align-items: center;
 }
 
+@mixin fontProp {
+    color: white;
+    font-size: 1.5rem;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -21,9 +26,8 @@ html {
     box-sizing: inherit;
 }
 
-a, p {
-    color: white;
-    font-size: 1.5rem;
+p {
+   @include fontProp();
 }
 
 .main {
@@ -53,6 +57,7 @@ a, p {
             list-style: none;  
             li a {
                 text-decoration: none;
+                @include fontProp();
             }
         }
     }
