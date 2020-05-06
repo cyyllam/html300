@@ -1,23 +1,17 @@
-// Colors
-$gray: #F2F4F7;
-$dark-gray: #D8D8D8;
-$medium-gray: #F5F5F5;
-$font-gray: #707070;
+// fonts
+$font-size: 16px;
+$font-family: 'Roboto', sans-serif;
+$title-font-family: 'Nunito', sans-serif;
 
-// Template colors
-$white: #ffffff;
-// $black: #000000;
-// $green: #7acb00;
-// $pink: #ff0097;
-$red: #F1352B;
-// $orange: #ff6600;
-// $yellow: #ffb617;
-// $robins: #01c1d6;
-// $purple: #6e27c5;
-// $blue: #150f96;
+// color
+$text-primary: #696969;
+// $text-secondary: #ececec;
+$text-secondary: #484848;
+// $bg-primary: #23232e;
+$bg-primary: #f7f7f7;
+// $bg-secondary: #141418;
+$bg-secondary: #dadada;
+$icon: #19acfe;
 
-// Card Body Dimension
-$card-width: 951px;
-
-// Font family
-$font: 'Arial', 'Helvetica', 'sans-serif';
+// animattion
+$transition-speed: 600ms;

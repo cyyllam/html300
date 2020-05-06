@@ -1,11 +1,9 @@
-@function calculateRem($size) {
-    $remSize: $size / 16px;
-    @return $remSize * 1rem;
-    }
+// Inspired by: Fireship's Animated Navbar with CSS
+// https://www.youtube.com/watch?v=biOMz4puGt8
 
-@mixin margins-padding($mt, $mr, $mb, $ml, $padding) {
-    margin: $mt $mr $mb $ml;
-    padding: $padding;
+@mixin colorAndBackground($color, $backgroundColor) {
+    color: $color;
+    background: $backgroundColor; 
 }
 
 html {
@@ -18,101 +16,119 @@ html {
     box-sizing: inherit;
 }
 
-.main {
-    padding: 2rem;
-}
-
-h1 {
-    color: $red;  
-}
 p {
-    color: $font-gray;
-    font-family: $font;
+    font-family: $font-family;
 }
 
-.card-body {
-    width: $card-width; //approx 65%
-    background-color: $gray;
-    border: 1px solid $dark-gray;
-    border-radius: 5px;
-    margin: 1rem auto;
-    @include media-query("mobile") {
-        // call media query mixin
-        width: 100%;
-    }
+i {
+    color: $icon;
+    transition: $transition-speed;
 }
 
-.card-content {
-    background-color: $white;
-    @include margins-padding(2.5rem, 2.5rem, 2.5rem, 2.5rem, 1.8rem);
-    display: flex;
-    &_headshot-container {
-        // wrapper containing the headshot, name and title
-        text-align: center;
-        width: 40%;
-        img {
-            width: 75%;
-            border-radius: 50%;
-        }
-        p {
-            &:first-of-type {
-                //name
-                margin-top: 1rem;
-                font-size: calculateRem(26px);
-                font-weight: bold;
-            }
-            &:last-of-type {
-                //title
-                font-style: italic;
-                font-size: calculateRem(20px); 
-            }
-            margin: 0;
-        }
-    }
-    &_detail-container {
-        // wrapper containing personal information and Linked-in detail
-        @include margins-padding(0, 0, 0, 1rem, 2rem);
-        width: 60%;
-        background-color: $medium-gray;
-    }
-    @include media-query("mobile") {
-        // call media query mixin
-        flex-direction: column;
-        &_headshot-container {
-            width: 100%;
-        }
-        &_detail-container {
-            width: 100%;
-            margin: 1rem 0 0 0;
-        }
-    }
+body {
+    @include colorAndBackground(black, white);
+    margin: 0;
+    padding: 0;
 }
 
-.attribute-container {
-    // section that lists personal information
-    &_inline {
+main {
+    margin-left: 7rem;
+    padding: 1rem 3rem;
+}
+
+.navbar {
+    width: 7rem;
+    height: 100vh;
+    position: fixed;
+    background-color: $bg-primary;
+    transition: width 200ms ease;
+
+    &-nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
         display: flex;
-        p {
-            margin: 0 0 1.1rem 0;
-            font-size: calculateRem(20px); 
-            &:first-of-type {
-                font-weight: bold;
-                margin-right: 3px;
-                &::after {
-                    content: ":";
-                }  
-            }
+        flex-direction: column;
+        align-items: center;
+        height: 100%;
+    }
+
+    &:hover {
+        // when hovering over navbar, navbar will expand, icon will shift with text alongside it,
+        // and logo icon wil rotate 180 degrees to the left
+        width: 18rem;
+
+        i {
+            min-width: 2rem;
+            margin: 0 1.5rem;
+        }
+
+        .link-text {
+            display: block;
+        }
+
+        .logo i {
+            transform: rotate(-180deg);
         }
     }
 }
 
-.linkedin-container {
-    // line displaying Linked-in logo and info
+.nav-item {
+    width: 100%;
+
+    // place last icon on the far bottom
+    &:last-child {
+            margin-top: auto;
+        }
+}
+
+.nav-link {
     display: flex;
-    img {
-        margin-right: 10px;
+    align-items: center;
+    height: 4.5rem;
+    color: $text-primary;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(0.7);
+    transition: $transition-speed;
+
+    &:hover {
+        // when hovering over link, change color
+        filter: grayscale(0%) opacity(1);
+        @include colorAndBackground($text-secondary, $bg-secondary);
     }
-    p {
-        font-size: calculateRem(20px); 
+
+    i {
+        min-width: 2rem;
+        margin: auto;
+        
+    }
+} 
+
+.link-text {
+    display: none; 
+    margin-left: 1rem;
+    font-family: $title-font-family;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-family: $title-font-family;
+    font-weight: bold;
+}
+
+.logo {
+    // margin-bottom: 1rem;
+    text-align: center;
+    @include colorAndBackground($text-secondary, $bg-secondary);
+    font-size: 1rem;
+    width: 100%;
+
+    a {
+        display: flex;
+        justify-content: center;
+    }
+    i {
+        transform: rotate(0deg);
+        transition: transform $transition-speed;
     }
 }
