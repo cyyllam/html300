@@ -10,12 +10,15 @@
         <title>Assignment 06 - Bootstrap 4</title>
     </head>
     <body>
+      <!-- Landing page -->
       <header>
+        <!-- jumbotron -->
           <div class="jumbotron mb-0">
               <h1 class="display-3 mb-2">Movie Explorer</h1>
               <p class="lead">Your one stop to find movie trends and stats.</p>
           </div>
       </header> 
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-md navbar-dark bg-dark"> 
           <a class="navbar-brand" href="#"><i class="fas fa-film fa-2x"></i></a>                
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +44,8 @@
         
         <div class="row">
           <aside class="col-md-3 m-4">
-            <h2>Twitter Roll</h2>
+            <!-- Tooltip on sidebar header -->
+            <h2 class="text-info" data-toggle="tooltip" data-placement="top" title="Follow us on Twitter!">Twitter Roll</h2>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eius maiores numquam. Eligendi, quod, a, inventore iure beatae dolorem fuga quo accusantium voluptatibus sit eveniet maxime? Distinctio ratione autem facilis!</p>
              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis eum, labore corrupti omnis harum voluptatem. Libero, quidem velit? Ex odit nobis incidunt fugiat aspernatur iure fugit quia voluptatibus reiciendis maiores.</p> 
           </aside>
@@ -51,9 +55,10 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, reprehenderit ex error, non assumenda veritatis expedita, ipsam laudantium est reiciendis quae commodi ratione! Obcaecati non soluta, sint vitae aliquam dignissimos?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit ratione, omnis eum sit error expedita totam aperiam suscipit deleniti inventore officiis eius pariatur qui sunt facere saepe libero corrupti mollitia.</p>
             <hr class="my-5">
+            <!-- blockquote with tooltip in footer -->
             <blockquote class="blockquote text-center">
               <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-              <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+              <footer class="blockquote-footer"><a class="text-info" data-toggle="tooltip" data-placement="top" title="Some Hollywood celebrity">Someone famous</a> in <cite title="Source Title">Source Title</cite></footer>
             </blockquote>
           </main>
 
@@ -63,5 +68,6 @@
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    </body>
+        <script src="functions.js"></script>
+      </body>
 </html>

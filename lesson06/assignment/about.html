@@ -10,6 +10,7 @@
         <title>Assignment 06 - Bootstrap 4</title>
     </head>
     <body>
+        <!-- Page containing accordian -->
         <header>
             <div class="jumbotron mb-0">
                 <h1 class="display-3 mb-2">Movie Explorer</h1>
@@ -39,17 +40,23 @@
             </div>
             </nav>
         <main class="main">
+            <!-- Using Nav, pill-style tab panels -->
             <div class="row m-5">
                 <div class="col-md-3 nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <!-- First tab of Nav: About -->
                     <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Movie Explorer</a>
+                    <!-- Second tab of Nav: FAQ -->
                     <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-faq" role="tab" aria-controls="v-pills-profile" aria-selected="false">FAQ</a>
                 </div>
+                <!-- Accordian section -->
                 <div class="col-md-9 tab-content" id="v-pills-tabContent">
+                    <!-- About -->
                     <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
                         <p>Click on FAQ to see accordian</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis aliquam suscipit maxime itaque corporis possimus eligendi voluptatem, tenetur cupiditate ad delectus hic adipisci esse unde, laboriosam aut? Nobis, illo iusto.</p>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque totam fugit accusamus optio omnis, ratione doloribus ex quis illum, laborum suscipit consequatur numquam. Sint maxime deserunt hic placeat fugiat officia!</p>
                     </div>
+                    <!-- FAQ -->
                     <div class="tab-pane fade" id="v-faq" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                         <div class="container">
                             <div class="accordion" id="accordionExample">
