@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <!-- <h1>{{ msg }}</h1> -->
+    <!-- my test -->
+    <h1>{{ text }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -32,9 +34,16 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
+  // name: 'HelloWorld',
+  // props: {
+  //   msg: String
+  // }
+
+  // my test
+  data () {
+    return {
+      text: "Hello!!!!"
+    }
   }
 }
 </script>

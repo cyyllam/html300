@@ -18,9 +18,9 @@
           <b-navbar-nav>
             <!-- embed router-links to -->
             <b-nav-item to="/">Home</b-nav-item>
-            <b-nav-item to="/trends">Trends</b-nav-item>
-            <b-nav-item to="/images">Images</b-nav-item>
-            <b-nav-item to="/about">About</b-nav-item>
+            <b-nav-item to="Trends">Trends</b-nav-item>
+            <b-nav-item to="Images">Images</b-nav-item>
+            <b-nav-item to="About">About</b-nav-item>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
