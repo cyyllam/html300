@@ -1,5 +1,5 @@
 <template>
-  <div class="my-4">
+  <div class="my-5">
     <!-- this component references another component -->
     <!-- the TrendsBlock component consists of a card for a graph or image and a side caption for 
     detailed text and explanation -->
@@ -13,7 +13,7 @@
 import TrendsBlock from '@/components/TrendsBlock.vue'
 
 export default {
-  name: 'Home',
+  name: 'Trends',
   components: {
     TrendsBlock
   },
