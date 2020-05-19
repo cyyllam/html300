@@ -1,11 +1,10 @@
 <template>
   <div class="home">
+    <!-- this home page follows the default HelloWorld example where a component is imported -->
     <Landing />
 
     <!-- <img alt="Vue logo" src="../assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <!-- <HelloWorld msg=" "/> -->
-    <!-- <HelloWorld /> -->
   </div>
 </template>
 

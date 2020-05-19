@@ -29,6 +29,7 @@ export default {
       }
   },
   methods: {
+    // function to concatenate beginning of file path
     thumbUrl(filename) {
       return require(`../assets/${filename}`);
     },

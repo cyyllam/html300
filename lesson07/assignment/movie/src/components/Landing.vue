@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">     
+  <div>     
       <b-row class="m-4">
         <b-col md="3">
             <h2>{{ sideHeader }}</h2>
@@ -10,7 +10,7 @@
             <h2>{{ mainHeader }}</h2>
             <!-- create three dummy paragraphs -->
             <p v-for="alorem in selectLorems(3)" :key="alorem.id">{{alorem}}</p>
-                       <hr class="my-5">
+            <hr class="my-5">
             <!-- blockquote with tooltip in footer -->
             <blockquote class="blockquote text-center">
               <p class="mb-0" v-for="alorem in selectLorems(1)" :key="alorem.id">{{alorem}}</p>
@@ -23,10 +23,6 @@
 
 <script>
 export default {
-//   name: 'Landing',
-//   props: {
-//     msg: String
-//   },
   data () {
       return {
           sideHeader: "Follow us on Twitter!",
