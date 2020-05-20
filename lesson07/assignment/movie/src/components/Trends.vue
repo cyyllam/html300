@@ -3,19 +3,20 @@
     <!-- this component references other components -->
     <b-container>
       <b-row align-h="center">
-        <b-button :pressed.sync="myToggle" class="mr-4 mb-4" variant="info">Toggle View</b-button>
+        <!-- this button toggles between two layouts -->
+        <b-button :pressed.sync="myToggle" v-on:click="buttonLabel" class="mr-4 mb-4" variant="info">{{ button.label }}</b-button>
       </b-row>
     </b-container>
     
     <!-- the TrendsBlock component consists of a card for a graph or image and a side caption for 
     detailed text and explanation -->
     <!-- generate as many blocks or tiles based on numBLocks variable -->
-    <!-- default, if block button selected -->
+    <!-- default layout-->
     <div v-if="myToggle">
       <TrendsBlock v-for="d in numBlocks" :key="d.id"/>
     </div>
       
-    <!-- if gallery button clicked   -->
+    <!-- second layout when toggled -->
     <div>
        <b-container>
         <b-card-group deck>
@@ -29,7 +30,7 @@
 </template>
 
 <script>
-// create component called Landing.vue and import it
+// create components and import it
 import TrendsBlock from '@/components/TrendsBlock.vue'
 import TrendsTile from '@/components/TrendsTile.vue'
 
@@ -42,11 +43,16 @@ export default {
    data () {
       return {
         myToggle: true,
+        button: {state: true, label: "Switch to Gallery View"},
         numBlocks: 10
       }
   },
   methods: {
-    
+    buttonLabel: function() {
+      // change button label when clicked
+      this.button.state = !this.button.state;
+      this.button.label = this.button.state ? 'Switch to Gallery View' :'Switch to List View';  
+    }
   }
 }
 </script>
