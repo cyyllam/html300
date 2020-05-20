@@ -25,7 +25,7 @@
 export default {
   data () {
       return {
-          sideHeader: "Follow us on Twitter!",
+          sideHeader: "Twitter Roll",
           mainHeader: "Weclome!",
           loremText: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eius maiores numquam. Eligendi, quod, a, inventore iure beatae dolorem fuga quo accusantium voluptatibus sit eveniet maxime? Distinctio ratione autem facilis!"
       }
