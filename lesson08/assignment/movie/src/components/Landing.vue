@@ -1,6 +1,6 @@
 <template>
   <div>     
-      <b-row class="mx-4">
+      <b-row>
         <b-col>  
             <hr class="mb-5">
             <!-- blockquote with tooltip in footer -->
@@ -19,8 +19,7 @@
 export default {
   data () {
       return {
-          quotes: {movie: "Sudden Impact", quote: "Go ahead, make my day.", character: "Harry Callahan", actor: "Clint Eastwood"},
-          loremText: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque eius maiores numquam. Eligendi, quod, a, inventore iure beatae dolorem fuga quo accusantium voluptatibus sit eveniet maxime? Distinctio ratione autem facilis!"
+          quotes: {movie: "Sudden Impact", quote: "Go ahead, make my day.", character: "Harry Callahan", actor: "Clint Eastwood"}
       }
   },
   methods: {

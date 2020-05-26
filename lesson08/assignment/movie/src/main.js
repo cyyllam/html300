@@ -9,6 +9,10 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
+Vue.filter("makeUpper", function(myString) {
+  return myString.toUpperCase();
+}) 
+
 new Vue({
   router,
   render: h => h(App)

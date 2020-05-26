@@ -17,7 +17,7 @@
     </div>
       
     <!-- second layout when toggled -->
-    <div>
+    <div v-else>
        <b-container>
         <b-card-group deck>
         <TrendsTile v-for="d in numBlocks" :key="d.id"/>
