@@ -1,3 +1,24 @@
+@mixin removeLiIndent {
+    // remove indentation after li bullet points are removed;
+    list-style-type: none;
+    list-style-position:inside;
+    margin:0;
+    padding:0;
+}
+
+@mixin flexCenter {
+    // ensure content is centered in container
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin fontProp {
+    // standard font properties for content
+    color: white;
+    font-size: 1.5rem;
+}
+
 html {
     box-sizing: border-box;
 }
@@ -8,6 +29,60 @@ html {
     box-sizing: inherit;
 }
 
+p {
+   @include fontProp();
+}
+
 .main {
     padding: 2rem;
+    display: grid;
+    // set up grid areas of 3 columns by 4 rows
+    grid-template-areas: 
+    "head head head"
+    "navi navi navi"
+    "sidebar sec sec"
+    "foot foot foot";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 2fr 1fr 4fr 2fr;
+
+    &__header {
+            grid-area: head;
+            background-color: $red;
+            @include flexCenter();
+    }
+
+    &__nav {
+        grid-area: navi;
+        background-color: $green;
+        padding: 2rem;
+        ul {
+            @include removeLiIndent();
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            list-style: none;  
+            li a {
+                text-decoration: none;
+                @include fontProp();
+            }
+        }
+    }
+
+    &__aside {
+        grid-area: sidebar;
+        background: $purple;
+        @include flexCenter();
+    }
+    
+    &__section {
+        grid-area: sec;
+        background-color: $orange;
+        @include flexCenter();
+    }
+    
+    &__footer {
+        grid-area: foot;
+        background-color: $blue;
+        @include flexCenter();
+    }
 }
