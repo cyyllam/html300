@@ -7,7 +7,6 @@
         </Header>
         <Gallery />
       </b-container>
-      
   </div>
 </template>
 

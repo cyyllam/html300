@@ -2,12 +2,15 @@
     <b-row>
         <!-- loop through each photo from the photos object, nesting img within a column -->
         <b-col md="4" v-for="photo in photos" :key="photo.id">
-        <b-img thumbnail fluid :src="thumbUrl(photo.filename)" :alt="photo.altText"></b-img>
+            <b-img @click="myToggleBorder" :style="style" thumbnail fluid :src="thumbUrl(photo.filename)" :alt="photo.altText"></b-img>
         </b-col>
     </b-row>
 </template>
 
 <script>
+// import mixin
+import { toggleBorder } from '../mixins/toggleBorderMixin.js'
+
 export default {
   data () {
       return {
@@ -22,6 +25,8 @@ export default {
           ]
       }
   },
+  // call mixin
+  mixins: [toggleBorder],
   methods: {
     // function to concatenate beginning of file path
     thumbUrl(filename) {
@@ -30,4 +35,5 @@ export default {
   }
 }
 </script>
+
      
