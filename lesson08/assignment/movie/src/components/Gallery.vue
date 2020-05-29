@@ -12,6 +12,11 @@
 import { toggleBorder } from '../mixins/toggleBorderMixin.js'
 
 export default {
+  props: {
+    // prop validation
+    src: String,
+    alt: String
+  },
   data () {
       return {
         // object containing image paths, alt text
