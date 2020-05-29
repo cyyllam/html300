@@ -1,17 +1,24 @@
 <template>
   <div class="wrapper">
     <h1 class="heading">Countries of Europe</h1>
-
+    <section class="container" v-if="countries">
+        <card
+          v-for="country of countries"
+          :key="country.id"
+          :country="country"
+        />
+    </section>
    
   </div>
 </template>
 
 <script>
-
+import Card from '../components/Card.vue';
+import axios from 'axios';
 
 export default {
   components: {
-    
+    Card
   },
   data() {
     return {
